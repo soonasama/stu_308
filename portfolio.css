@@ -7,7 +7,7 @@
 
 :root {
   color-scheme: dark;
-  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', 'Noto Sans', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
   background: #02070f;
   color: #e2e8f0;
@@ -417,7 +417,7 @@ button {
 .section-contact {
   padding: 32px;
   border-radius: 32px;
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(15, 23, 42, 0.92);
   border: 1px solid rgba(148, 163, 184, 0.12);
 }
 
@@ -564,7 +564,7 @@ button {
 
 /* 연락처 섹션 */
 #contact {
-    background: white;
+    
 }
 
 .contact-content {
