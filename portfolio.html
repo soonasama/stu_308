@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 - 자기소개</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <!-- 네비게이션 -->
+    <nav>
+        <div class="container">
+            <a class="logo" href="#home">Portfolio</a>
+            <ul>
+                <li><a onclick="scrollToSection('about')">소개</a></li>
+                <li><a onclick="scrollToSection('skills')">스킬</a></li>
+                <li><a onclick="scrollToSection('projects')">프로젝트</a></li>
+                <li><a onclick="scrollToSection('contact')">연락처</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 영웅 섹션 -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>안녕하세요! 👋</h1>
+            <p>저는 웹 개발자이며 창의적인 솔루션을 만드는 것을 좋아합니다.</p>
+            <button class="cta-button" onclick="scrollToSection('contact')">연락하기</button>
+            <button class="cta-button" style="background: transparent; color: white; border: 2px solid white;" onclick="scrollToSection('projects')">프로젝트 보기</button>
+        </div>
+    </section>
+
+    <!-- 자기소개 섹션 -->
+    <section id="about">
+        <div class="container">
+            <h2>자기소개</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>저에 대해</h3>
+                    <p>저는 HTML, CSS, JavaScript를 이용한 웹 개발에 열정을 가지고 있습니다. 사용자 경험을 중시하며 아름답고 기능적인 웹사이트를 만드는 것을 목표로 합니다.</p>
+                    <p>끊임없이 배우고 새로운 기술에 도전하는 것을 즐기며, 팀 프로젝트에서도 적극적으로 협력합니다.</p>
+                    <p>현재 프론트엔드 개발에 집중하고 있으며, 앞으로 풀스택 개발자가 되는 것이 목표입니다.</p>
+                </div>
+                <div class="about-image">💻</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 스킬 섹션 -->
+    <section id="skills">
+        <div class="container">
+            <h2>기술 스택</h2>
+            <div class="skills-grid">
+                <div class="skill-card" onmouseover="showSkillDetail(this)" onmouseout="hideSkillDetail(this)">
+                    <div class="skill-card-icon">🌐</div>
+                    <h3>HTML/CSS</h3>
+                    <p>웹 구조와 스타일링</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon">⚙️</div>
+                    <h3>JavaScript</h3>
+                    <p>인터랙티브 기능 구현</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon">🎨</div>
+                    <h3>UI/UX Design</h3>
+                    <p>사용자 친화적 인터페이스</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon">📱</div>
+                    <h3>반응형 디자인</h3>
+                    <p>모든 기기에 최적화</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon">🔧</div>
+                    <h3>도구 & 라이브러리</h3>
+                    <p>Git, VS Code, Bootstrap</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon">⚡</div>
+                    <h3>문제 해결</h3>
+                    <p>크리에이티브한 솔루션</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 프로젝트 섹션 -->
+    <section id="projects">
+        <div class="container">
+            <h2>최근 프로젝트</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">📱</div>
+                    <div class="project-info">
+                        <h3>계산기 앱</h3>
+                        <p>HTML, CSS, JavaScript로 만든 완전한 계산기. 모든 기본 연산과 소수점 계산을 지원합니다.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">🌐</div>
+                    <div class="project-info">
+                        <h3>포트폴리오 웹사이트</h3>
+                        <p>반응형 포트폴리오 페이지로 작업 이력과 기술 스택을 시각적으로 표현합니다.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">📝</div>
+                    <div class="project-info">
+                        <h3>To-Do 리스트</h3>
+                        <p>일정을 관리할 수 있는 인터랙티브한 To-Do 앱. 추가, 삭제, 완료 기능 지원.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 연락처 섹션 -->
+    <section id="contact">
+        <div class="container">
+            <h2>연락처</h2>
+            <div class="contact-content">
+                <p>질문이나 협업 제안이 있으시면 편하게 연락주세요!</p>
+                
+                <div class="social-links">
+                    <a class="social-link" href="mailto:example@email.com" title="이메일">✉️</a>
+                    <a class="social-link" href="#" title="GitHub">🐙</a>
+                    <a class="social-link" href="#" title="LinkedIn">💼</a>
+                    <a class="social-link" href="#" title="Twitter">🐦</a>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">이름</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">메시지</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">메시지 보내기</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>
