@@ -1,243 +1,192 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>계산기</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .calculator {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 400px;
-            padding: 20px;
-        }
-
-        .display {
-            background: #333;
-            color: #fff;
-            font-size: 2.5rem;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: right;
-            margin-bottom: 20px;
-            min-height: 80px;
-            word-wrap: break-word;
-            word-break: break-all;
-            overflow: auto;
-            font-weight: 500;
-        }
-
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
-
-        button {
-            padding: 20px;
-            font-size: 1.5rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: #f0f0f0;
-            color: #333;
-        }
-
-        button:hover {
-            background: #e0e0e0;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        button:active {
-            transform: translateY(0);
-        }
-
-        button.operator {
-            background: #667eea;
-            color: white;
-            font-weight: 700;
-        }
-
-        button.operator:hover {
-            background: #5568d3;
-        }
-
-        button.equals {
-            background: #48bb78;
-            color: white;
-            font-weight: 700;
-            grid-column: span 2;
-        }
-
-        button.equals:hover {
-            background: #38a169;
-        }
-
-        button.clear {
-            background: #f56565;
-            color: white;
-            font-weight: 700;
-            grid-column: span 2;
-        }
-
-        button.clear:hover {
-            background: #e53e3e;
-        }
-
-        button.delete {
-            background: #ed8936;
-            color: white;
-            font-weight: 700;
-        }
-
-        button.delete:hover {
-            background: #dd6b20;
-        }
-
-        .zero-span {
-            grid-column: span 2;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>생성형 AI 프론트엔드 개발자 포트폴리오</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/Pretendard.css" />
+  <link rel="stylesheet" href="portfolio.css" />
 </head>
 <body>
-    <div class="calculator">
-        <div class="display" id="display">0</div>
-        <div class="buttons">
-            <button class="clear" onclick="clearDisplay()">C</button>
-            <button class="delete" onclick="deleteLastChar()">DEL</button>
-            <button class="operator" onclick="appendOperator('/')">÷</button>
-            <button onclick="appendNumber('7')">7</button>
-            <button onclick="appendNumber('8')">8</button>
-            <button onclick="appendNumber('9')">9</button>
-            <button class="operator" onclick="appendOperator('*')">×</button>
-            <button onclick="appendNumber('4')">4</button>
-            <button onclick="appendNumber('5')">5</button>
-            <button onclick="appendNumber('6')">6</button>
-            <button class="operator" onclick="appendOperator('-')">−</button>
-            <button onclick="appendNumber('1')">1</button>
-            <button onclick="appendNumber('2')">2</button>
-            <button onclick="appendNumber('3')">3</button>
-            <button class="operator" onclick="appendOperator('+')">+</button>
-            <button class="zero-span" onclick="appendNumber('0')">0</button>
-            <button onclick="appendDecimal()">.</button>
-            <button class="equals" onclick="calculate()">=</button>
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="#home" class="brand">AI Frontend Dev</a>
+        <nav class="site-nav">
+          <a href="#about">About</a>
+          <a href="#skills">Tech</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact" class="button button-primary">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="section hero-section fade-up">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">대우능력개발원 · 생성형 AI 프론트엔드</span>
+            <h1>생성형 AI를 활용할 줄 아는<br />프론트엔드 개발자</h1>
+            <p>AI 기반 프로토타입부터 직관적인 인터페이스 구현까지. 순수 HTML, 일반 CSS, 그리고 Vanilla JavaScript로 완성한 반응형 포트폴리오입니다.</p>
+            <div class="hero-actions">
+              <a href="#projects" class="button button-primary">프로젝트 보기</a>
+              <a href="#contact" class="button button-secondary">지금 연락하기</a>
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="hero-card-glow"></div>
+            <div class="hero-card-panel">
+              <div class="hero-card-tag">현재 위치</div>
+              <h2>대우능력개발원 수료 · 취업 준비 중</h2>
+              <div class="hero-card-list">
+                <p>• 생성형 AI 협업 워크플로우 이해</p>
+                <p>• 엄격한 UI/UX 감각</p>
+                <p>• 반응형 웹 경험 설계</p>
+              </div>
+              <div class="progress-bar">
+                <span>프로젝트 완성도</span>
+                <div class="progress-track"><div class="progress-fill"></div></div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <script>
-        let display = document.getElementById('display');
-        let currentValue = '0';
-        let previousValue = '';
-        let operator = '';
-        let shouldResetDisplay = false;
+      <section id="about" class="section section-split fade-up">
+        <div class="split-panel split-panel-primary">
+          <span class="eyebrow">About Me</span>
+          <h2>열정과 기본기가 만나는 예비 개발자</h2>
+          <p>대우능력개발원의 생성형 AI 프론트엔드 개발자 과정을 수료하며, AI 기반 UX 설계와 프론트엔드 전체 흐름을 직접 구현했습니다. 깔끔한 코드와 직관적인 인터랙션으로 실제 서비스 수준의 웹 경험을 완성합니다.</p>
+          <div class="feature-grid">
+            <div class="feature-card">
+              <h3>학습 강점</h3>
+              <p>빠른 적응력 · 문제 해결</p>
+            </div>
+            <div class="feature-card">
+              <h3>협업 스타일</h3>
+              <p>명확한 커뮤니케이션 · 책임감</p>
+            </div>
+          </div>
+        </div>
+        <div class="split-panel split-panel-secondary">
+          <div class="info-card">
+            <span class="eyebrow">Core Skills</span>
+            <p>HTML · CSS · JavaScript</p>
+          </div>
+          <div class="info-card">
+            <span class="eyebrow">AI Workflow</span>
+            <p>생성형 AI 기반 협업 프로세스 경험</p>
+          </div>
+          <div class="goal-card">
+            <div>
+              <span class="eyebrow">성장 목표</span>
+              <p>AI 친화형 프론트엔드 엔지니어</p>
+            </div>
+            <div class="goal-badge">✨</div>
+          </div>
+        </div>
+      </section>
 
-        function updateDisplay() {
-            display.textContent = currentValue;
-        }
+      <section id="skills" class="section fade-up">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Tech Stack</span>
+            <h2>프론트엔드 + 도구</h2>
+          </div>
+          <p>HTML, CSS, JavaScript부터 React/Next.js, Python, Figma, Notion까지 프로젝트와 협업에서 활용한 핵심 기술을 정리했습니다.</p>
+        </div>
+        <div class="badge-grid">
+          <div class="badge-card"><span>H</span><p>HTML</p></div>
+          <div class="badge-card"><span>C</span><p>CSS</p></div>
+          <div class="badge-card"><span>J</span><p>JavaScript</p></div>
+          <div class="badge-card"><span>R</span><p>React</p></div>
+          <div class="badge-card"><span>N</span><p>Next.js</p></div>
+          <div class="badge-card"><span>P</span><p>Python</p></div>
+          <div class="badge-card"><span>F</span><p>Figma</p></div>
+          <div class="badge-card"><span>N</span><p>Notion</p></div>
+        </div>
+      </section>
 
-        function appendNumber(num) {
-            if (shouldResetDisplay) {
-                currentValue = num;
-                shouldResetDisplay = false;
-            } else {
-                currentValue = currentValue === '0' ? num : currentValue + num;
-            }
-            updateDisplay();
-        }
+      <section id="projects" class="section fade-up">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Projects</span>
+            <h2>진행한 주요 프로젝트</h2>
+          </div>
+          <p>벤토 그리드 카드로 프로젝트를 정리하여 UI 완성도와 기술 스택을 명확하게 전달합니다.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-card-top">
+              <span>AI Portfolio</span>
+              <small>Web</small>
+            </div>
+            <h3>AI 지원 포트폴리오</h3>
+            <p>JavaScript로 구현한 반응형 포트폴리오로 AI 프로젝트 경험을 직관적으로 전달합니다.</p>
+            <div class="tag-row">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <a href="https://github.com/your-github-id/ai-portfolio" target="_blank" class="button button-card">GitHub 보기</a>
+          </article>
+          <article class="project-card">
+            <div class="project-card-top">
+              <span>AI Dashboard</span>
+              <small>UI</small>
+            </div>
+            <h3>AI 챗봇 대시보드</h3>
+            <p>데이터 중심 카드 레이아웃과 관리자 UI를 설계한 프로젝트입니다.</p>
+            <div class="tag-row">
+              <span>React</span><span>Next.js</span><span>Figma</span>
+            </div>
+            <a href="https://github.com/your-github-id/ai-dashboard" target="_blank" class="button button-card">GitHub 보기</a>
+          </article>
+          <article class="project-card">
+            <div class="project-card-top">
+              <span>Product</span>
+              <small>Mobile</small>
+            </div>
+            <h3>반응형 To-Do 앱</h3>
+            <p>생성형 AI 추천 컨셉을 담은 작업 관리 앱 UX를 제안했습니다.</p>
+            <div class="tag-row">
+              <span>Notion</span><span>GitHub</span><span>Python</span>
+            </div>
+            <a href="https://github.com/your-github-id/todo-ai" target="_blank" class="button button-card">GitHub 보기</a>
+          </article>
+        </div>
+      </section>
 
-        function appendOperator(op) {
-            if (operator && !shouldResetDisplay) {
-                calculate();
-            }
-            previousValue = currentValue;
-            operator = op;
-            shouldResetDisplay = true;
-        }
+      <section id="contact" class="section section-contact fade-up">
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <span class="eyebrow">Contact</span>
+            <h2>함께 만들고 싶은 프로젝트가 있다면</h2>
+            <p>이메일 또는 GitHub으로 편하게 연락주세요. 포트폴리오와 기술 스택에 맞는 협업 기회를 환영합니다.</p>
+            <div class="contact-links">
+              <a href="mailto:hello@yourname.dev"><strong>✉️</strong> hello@yourname.dev</a>
+              <a href="https://github.com/your-github-id" target="_blank"><strong>🐙</strong> github.com/your-github-id</a>
+            </div>
+          </div>
+          <form id="contactForm" class="contact-form">
+            <label for="name">이름</label>
+            <input id="name" name="name" type="text" required />
+            <label for="email">이메일</label>
+            <input id="email" name="email" type="email" required />
+            <label for="message">메시지</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <button type="submit" class="button button-primary">메시지 보내기</button>
+            <p id="formMessage" class="form-message">감사합니다! 메시지가 정상적으로 전송되었습니다.</p>
+          </form>
+        </div>
+      </section>
+    </main>
 
-        function appendDecimal() {
-            if (shouldResetDisplay) {
-                currentValue = '0.';
-                shouldResetDisplay = false;
-            } else if (!currentValue.includes('.')) {
-                currentValue += '.';
-            }
-            updateDisplay();
-        }
-
-        function calculate() {
-            if (!operator || shouldResetDisplay) return;
-
-            let result;
-            const prev = parseFloat(previousValue);
-            const current = parseFloat(currentValue);
-
-            switch (operator) {
-                case '+':
-                    result = prev + current;
-                    break;
-                case '-':
-                    result = prev - current;
-                    break;
-                case '*':
-                    result = prev * current;
-                    break;
-                case '/':
-                    if (current === 0) {
-                        alert('0으로 나눌 수 없습니다!');
-                        clearDisplay();
-                        return;
-                    }
-                    result = prev / current;
-                    break;
-                default:
-                    return;
-            }
-
-            currentValue = parseFloat(result.toFixed(10)).toString();
-            operator = '';
-            shouldResetDisplay = true;
-            updateDisplay();
-        }
-
-        function clearDisplay() {
-            currentValue = '0';
-            previousValue = '';
-            operator = '';
-            shouldResetDisplay = false;
-            updateDisplay();
-        }
-
-        function deleteLastChar() {
-            if (currentValue.length === 1) {
-                currentValue = '0';
-            } else {
-                currentValue = currentValue.slice(0, -1);
-            }
-            updateDisplay();
-        }
-
-        // 초기 디스플레이 설정
-        updateDisplay();
-    </script>
+    <footer class="site-footer">
+      © 2026 생성형 AI 프론트엔드 개발자 포트폴리오
+    </footer>
+  </div>
+  <script src="portfolio.js" defer></script>
 </body>
 </html>
